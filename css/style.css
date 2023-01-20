@@ -1,0 +1,426 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto"), 
+    url("../fonts/AnyConv.com__Roboto-Regular.woff2") format("woff2"),
+    url("../fonts/AnyConv.com__Roboto-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto"), 
+    url("../fonts/AnyConv.com__Roboto-Bold.woff2") format("woff2"),
+    url("../fonts/AnyConv.com__Roboto-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    min-width: 320px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+:root {
+    --blue-color: #3F2AFF;
+    --dark-blue-color: #2E2B44;
+    --dark-color: #212133;
+    --white-color: #FFFFFF;
+    --dark-grey-color: #666666;
+    --grey-color: #85859B;
+    --light-gray-color: #EDF0F9;
+    --back-ground-color: #E5E5E5;
+    --mb: 80px;
+    --padding: 30px;
+}
+
+.list-resert {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.btn {
+    border: none;
+    padding: 0;
+    color: var(--white-color);
+    background: var(--blue-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--dark-color);
+}
+
+.btn:focus-visible {
+    outline-offset: 2px;
+    outline: 1px solid var(--white-color);
+}
+
+.descr {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.text {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+}
+
+.wrap {
+    display: flex;
+    align-items: center;
+}
+
+ /* header */
+
+.header {
+    background-color: var(--blue-color);
+}
+
+.header__content {
+    margin: 28px 0;
+}
+
+.header__logo {
+    margin-right: auto;
+}
+
+.burger {
+    display: none;
+}
+
+.header__list {
+    display: flex;
+}
+
+.header__item:not(:last-child) {
+    margin-right: 57px;
+}
+
+.header__link {
+    position: relative;
+    z-index: 1;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--white-color);
+    transition: color 0.3s ease-in-out;
+}
+
+.header__link::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -7px;
+    right: -15px;
+    bottom: -7px;
+    left: -15px;
+    background-color: var(--dark-color);
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.header__link:focus {
+    outline: none;
+}
+
+.header__link:focus-visible::after {
+    opacity: 1;
+}
+
+.header__link:hover {
+    color: var(--dark-color);
+}
+
+.header__link:active {
+    color: var(--dark-blue-color);
+}
+
+/* hero */
+
+.hero {
+    background: radial-gradient(44.07% 44.07% at 67.78% 55.93%, #555681 0%, #212133 100%);
+}
+
+.hero__container {
+    padding-top: 13px;
+}
+
+.hero__content {
+    padding-top: 116px;
+    padding-bottom: 129px;
+}
+
+.hero__title {
+    margin: 0;
+    margin-bottom: 28px;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 100%;
+    color: var(--white-color);
+}
+
+.hero__descr {
+    margin-bottom: 63px;
+    color: var(--white-color);
+}
+
+.hero__btn {
+    padding: 24px 75px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.hero__cont img {
+    width: 100%;
+}
+
+/* benefits */
+
+.benefits {
+    /* background-color: var(--back-ground-color); */
+    padding-bottom: var(--mb);
+}
+
+.benefits__container {
+    padding-top: var(--mb);
+}
+
+.benefits__content {
+    margin-bottom: 25px;
+    padding-left: 190px;
+    background-image: url(../img/benefits.png);
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+
+.benefits__title {
+    margin-bottom: 17px;
+    color: var(--dark-blue-color);
+}
+
+.benefits__descr {
+    color: var(--dark-grey-color);
+}
+
+.benefits__list {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.benefits__item {
+    min-height: 80px;
+    padding-top: 10px;
+    padding-left: 124px;
+    background-position: 5% center;
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+}
+
+.benefits__text {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    color: var(--dark-grey-color);
+}
+
+.bi1 {
+    background-image: url(../img/bi1.svg);
+}
+
+.bi2 {
+    background-image: url(../img/bi2.svg);
+}
+
+.bi3 {
+    background-image: url(../img/bi3.svg);
+}
+
+/* teachers */
+
+.teachers {
+    padding: 74px 0;
+    background-color: var(--dark-color);
+}
+
+.teachers__title {
+    margin-bottom: 22px;
+    color: var(--white-color);
+}
+
+.teachers__img {
+    margin-bottom: 28px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.teachers__subtitle {
+    margin-bottom: 7px;
+    color: var(--white-color);
+}
+
+.teachers__descr {
+    color: var(--grey-color);
+}
+
+/* courses */
+
+.courses {
+    padding: 75px 0;
+}
+
+.courses__title {
+    margin-bottom: 25px;
+}
+
+.courses__content {
+    margin-bottom: 30px;
+}
+
+.courses__item {
+    position: relative;
+    min-height: 480px;
+    height: 100%;
+    padding-top: 210px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 20px;
+    background-color: var(--light-gray-color);
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.ci1 {
+    position: relative;
+    background-image: url(../img/6.jpg);
+}
+
+.courses__item::before {
+    content: url(../img/mdi_access_time.svg);
+    position: absolute; 
+    top: 9px;
+    right: 76px;
+}
+
+.courses__time {
+    position: absolute;
+    top: 12px;
+    right: 4px;
+    color: var(--white-color);
+}
+
+.ci2 {
+    background-image: url(../img/11.jpg);
+}
+
+.ci4 {
+    background-image: url(../img/002.jpg);
+}
+
+.ci3 {
+    background-image: url(../img/001.jpg);
+}
+
+.courses__text {
+    margin-bottom: 9px;
+    color: var(--dark-grey-color);
+}
+
+.courses__descr  {
+    margin-bottom: 28px;
+    color: var(--dark-color);
+}
+
+.courses__link {
+    /* margin-top: auto; */
+    position: absolute;
+    bottom: 31px;
+    padding: 20.5px 60px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--white-color);
+}
+
+.courses__link:focus-visible {
+    outline: 2px solid var(--dark-color);
+}
+
+/* footer */
+
+.footer__top {
+    padding: 31px 0;
+    background-color: var(--dark-blue-color);
+}
+
+.social {
+    display: flex;
+    align-items: center;
+}
+
+.social__item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.social__link {
+    display: flex;
+    align-items: center;
+    fill: var(--white-color);
+    transition: background-color 0.3s ease-in-out, fill 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.social__link:hover {
+    fill: var(--blue-color);
+}
+
+.social__link:focus-visible {
+    outline-offset: 2px;
+    outline: 1px solid var(--white-color);
+}
+
+.footer__copy {
+    display: block;
+    width: 100%;
+    color: var(--dark-blue-color);
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
